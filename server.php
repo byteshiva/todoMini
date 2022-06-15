@@ -9,7 +9,12 @@
 // enable cors
 cors();
 
-$dir = "data";
+// Set data directory to data if no one logged in
+// Otherwise to data/<username>
+$dir = "data/".$_SERVER['PHP_AUTH_USER'];
+if (!file_exists($dir)) {
+  mkdir($dir, 0777);
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (isset($_POST["filename"])) {
