@@ -36,6 +36,9 @@ Then copy `./example.htaccess` to `.htaccess` and edit it.
 
 If you have multiple users, clone the directory for each user and create a unique htaccess login for each.
 
+Alternatively, you can create the environment variable TODO_PER_USER_FOLDERS with the value set to "TRUE".
+Then just add each user to the same htpassword file.  This will create per user fodlers within the data folder, and use the correct one based on currently logged in user.  New folders will be created automatically.
+
 To create a shared list, symlink one of the TODO list files into each user's data directory.
 
 ### Textfile format
